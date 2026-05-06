@@ -34,4 +34,4 @@ Mais de 10 anos transformando dados em decisões. O portfólio destaca três cas
 
 ---
 
-Construído com HTML, CSS e atenção aos detalhes. Hospedado no GitHub Pages.
+Construído em HTML/CSS. Hospedado no GitHub Pages.
