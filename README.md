@@ -2,7 +2,7 @@
 
 Portfólio profissional de **Valério Reis**, Analista de BI Sênior — Power BI, SQL Server, Python, Power Apps, Power Automate e Azure Databricks.
 
-🌐 **Acesse:** [https://SEU-USUARIO.github.io](https://SEU-USUARIO.github.io) *(atualize com seu link após o deploy)*
+🌐 **Acesse:** [https://vlreis90.github.io](https://vlreis90.github.io)
 
 ## Sobre
 
