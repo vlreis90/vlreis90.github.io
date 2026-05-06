@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power Apps · Reajuste Contratual — Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+  :root {
+    --bg:#000;
+    --surface:#111113;
+    --surface-2:#161618;
+    --hairline:rgba(255,255,255,0.08);
+    --hairline-strong:rgba(255,255,255,0.14);
+    --text:#f5f5f7;
+    --text-2:#a1a1a6;
+    --text-3:#6e6e73;
+    --accent:#7c3aed;
+    --accent-2:#22d3ee;
+    --green:#34d399;
+    /* Power Apps inner palette */
+    --pa-blue:#0078D4;
+    --pa-purple:#742774;
+    --pa-bg:#F3F2F1;
+    --pa-card:#FFFFFF;
+    --pa-text:#201F1E;
+    --pa-text-2:#605E5C;
+    --pa-text-3:#A19F9D;
+    --pa-border:#EDEBE9;
+  }
+  body {
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.5;
+  }
+  .container { max-width:1200px; margin:0 auto; padding:0 24px; }
+  ::selection { background:var(--accent); color:#fff; }
+
+  /* HEADER */
+  .top {
+    padding:80px 0 40px;
+    text-align:center;
+    border-bottom:1px solid var(--hairline);
+    background:radial-gradient(ellipse at top, rgba(124,58,237,0.15), transparent 60%);
+  }
+  .badge {
+    display:inline-flex; align-items:center; gap:8px;
+    padding:6px 14px;
+    background:rgba(124,58,237,0.12);
+    border:1px solid rgba(124,58,237,0.3);
+    border-radius:999px;
+    font-size:12px;
+    color:#c4b5fd;
+    margin-bottom:24px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    font-weight:500;
+  }
+  h1 {
+    font-size:clamp(40px, 6vw, 64px);
+    font-weight:700;
+    letter-spacing:-0.04em;
+    line-height:1.05;
+    margin-bottom:20px;
+  }
+  .gradient-text {
+    background:linear-gradient(135deg,#fff 0%,#a1a1a6 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .accent-text {
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .lede {
+    font-size:18px;
+    color:var(--text-2);
+    max-width:680px;
+    margin:0 auto;
+    letter-spacing:-0.01em;
+  }
+  .meta-row {
+    display:flex; justify-content:center; gap:32px;
+    margin-top:32px;
+    flex-wrap:wrap;
+    font-size:13px;
+    color:var(--text-3);
+  }
+  .meta-row span strong { color:var(--text); }
+
+  /* SECTION */
+  section { padding:80px 0; }
+  .section-head { text-align:center; margin-bottom:60px; }
+  .eyebrow {
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:0.06em;
+    color:var(--accent-2);
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:12px;
+  }
+  .section-head h2 {
+    font-size:clamp(32px,4vw,44px);
+    font-weight:700;
+    letter-spacing:-0.03em;
+    margin-bottom:12px;
+  }
+  .section-head p { color:var(--text-2); max-width:600px; margin:0 auto; }
+
+  /* ARCHITECTURE */
+  .arch {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    align-items:stretch;
+    margin-top:40px;
+  }
+  .arch-step {
+    background:var(--surface);
+    border:1px solid var(--hairline);
+    border-radius:20px;
+    padding:28px 20px;
+    text-align:center;
+    position:relative;
+    transition:border-color .3s, transform .3s;
+  }
+  .arch-step:hover { border-color:var(--hairline-strong); transform:translateY(-2px); }
+  .arch-step .icon {
+    width:52px; height:52px;
+    border-radius:14px;
+    background:linear-gradient(135deg, rgba(124,58,237,0.2), rgba(34,211,238,0.18));
+    display:flex; align-items:center; justify-content:center;
+    font-size:24px;
+    margin:0 auto 16px;
+  }
+  .arch-step .step-tag {
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    color:var(--text-3);
+    letter-spacing:0.06em;
+    margin-bottom:6px;
+  }
+  .arch-step h4 {
+    font-size:16px; font-weight:600; margin-bottom:6px;
+    letter-spacing:-0.01em;
+  }
+  .arch-step p {
+    color:var(--text-2);
+    font-size:13px;
+    line-height:1.45;
+    margin:0;
+  }
+  .arch-step:not(:last-child)::after {
+    content:'↔';
+    position:absolute;
+    right:-12px; top:50%;
+    transform:translateY(-50%);
+    color:var(--accent-2);
+    font-size:18px;
+    z-index:2;
+    background:var(--bg);
+    width:24px; height:24px;
+    display:flex; align-items:center; justify-content:center;
+    border-radius:50%;
+  }
+
+  /* PHONE SHOWCASE */
+  .phones-row {
+    display:flex;
+    gap:32px;
+    overflow-x:auto;
+    padding:20px 0 60px;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .phone-wrap { scroll-snap-align:center; flex-shrink:0; }
+  .phone-label {
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    color:var(--text-3);
+    text-align:center;
+    margin-bottom:14px;
+    letter-spacing:0.06em;
+  }
+  .phone-label .num { color:var(--accent-2); }
+
+  .phone {
+    width:280px;
+    height:600px;
+    background:#1c1c1e;
+    border-radius:42px;
+    padding:10px;
+    box-shadow:
+      0 0 0 1.5px #2c2c2e inset,
+      0 30px 60px rgba(0,0,0,0.5),
+      0 12px 24px rgba(0,0,0,0.3);
+    position:relative;
+  }
+  .phone::before {
+    content:'';
+    position:absolute;
+    top:14px; left:50%;
+    transform:translateX(-50%);
+    width:90px; height:24px;
+    background:#000;
+    border-radius:12px;
+    z-index:10;
+  }
+  .phone-screen {
+    width:100%; height:100%;
+    background:var(--pa-bg);
+    border-radius:32px;
+    overflow:hidden;
+    position:relative;
+    color:var(--pa-text);
+    font-family:'Segoe UI','Inter',sans-serif;
+    font-size:13px;
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* Power Apps inner UI */
+  .pa-statusbar {
+    height:34px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 22px;
+    font-size:11px;
+    font-weight:600;
+    color:var(--pa-text);
+    flex-shrink:0;
+  }
+  .pa-header {
+    background:linear-gradient(135deg,var(--pa-blue),var(--pa-purple));
+    color:#fff;
+    padding:14px 16px;
+    flex-shrink:0;
+  }
+  .pa-header .row { display:flex; align-items:center; gap:8px; margin-bottom:4px; }
+  .pa-header .back { font-size:18px; cursor:pointer; opacity:0.9; }
+  .pa-header h3 { font-size:14px; font-weight:600; }
+  .pa-header .sub { font-size:11px; opacity:0.85; }
+
+  .pa-body {
+    flex:1;
+    overflow-y:auto;
+    padding:16px;
+  }
+  .pa-section-label {
+    font-size:10px;
+    color:var(--pa-text-3);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    margin:8px 0 8px;
+    font-weight:600;
+  }
+  .pa-card {
+    background:var(--pa-card);
+    border:1px solid var(--pa-border);
+    border-radius:8px;
+    padding:12px;
+    margin-bottom:8px;
+    cursor:pointer;
+    transition:all .15s;
+  }
+  .pa-card:hover { border-color:var(--pa-blue); }
+  .pa-card .row { display:flex; align-items:center; gap:10px; }
+  .pa-avatar {
+    width:36px; height:36px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--pa-blue),var(--pa-purple));
+    color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:600;
+    flex-shrink:0;
+  }
+  .pa-card .name { font-size:13px; font-weight:600; }
+  .pa-card .meta { font-size:11px; color:var(--pa-text-2); }
+  .pa-card .arrow { margin-left:auto; color:var(--pa-text-3); }
+  .pa-status {
+    display:inline-block;
+    padding:2px 8px;
+    border-radius:10px;
+    font-size:10px;
+    font-weight:600;
+    background:#FFF4CE; color:#8A6914;
+    margin-top:4px;
+  }
+  .pa-status.green { background:#DFF6DD; color:#107C10; }
+  .pa-status.blue { background:#DEECF9; color:#005A9E; }
+
+  .pa-search {
+    background:var(--pa-card);
+    border:1px solid var(--pa-border);
+    border-radius:8px;
+    padding:8px 12px;
+    font-size:12px;
+    color:var(--pa-text-3);
+    margin-bottom:12px;
+  }
+
+  /* App home */
+  .pa-hero {
+    text-align:center;
+    padding:24px 16px 12px;
+  }
+  .pa-hero .logo {
+    width:48px; height:48px;
+    border-radius:12px;
+    background:linear-gradient(135deg,var(--pa-blue),var(--pa-purple));
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 10px;
+    font-size:22px;
+  }
+  .pa-hero .title { font-size:14px; font-weight:700; margin-bottom:4px; }
+  .pa-hero .desc { font-size:11px; color:var(--pa-text-2); }
+
+  /* Editable column row */
+  .col-row {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:11px 12px;
+    border-bottom:1px solid var(--pa-border);
+    background:var(--pa-card);
+    cursor:pointer;
+  }
+  .col-row:first-child { border-radius:8px 8px 0 0; }
+  .col-row:last-child { border-radius:0 0 8px 8px; border-bottom:none; }
+  .col-row.readonly { background:#FAFAF9; cursor:not-allowed; }
+  .col-row .col-name {
+    font-size:12px;
+    font-weight:600;
+    color:var(--pa-text);
+  }
+  .col-row.readonly .col-name { color:var(--pa-text-2); }
+  .col-row .col-val {
+    font-size:11px;
+    color:var(--pa-text-2);
+    margin-top:2px;
+  }
+  .col-row .col-arrow { color:var(--pa-text-3); font-size:14px; }
+  .col-row .badge-edit {
+    font-size:9px;
+    background:var(--pa-blue);
+    color:#fff;
+    padding:2px 6px;
+    border-radius:4px;
+    margin-right:6px;
+  }
+  .col-row.readonly .badge-edit { background:#A19F9D; }
+
+  /* Edit screen */
+  .pa-current {
+    background:#FFF4CE;
+    border:1px solid #F4D58A;
+    border-radius:8px;
+    padding:12px;
+    margin-bottom:12px;
+  }
+  .pa-current .lab {
+    font-size:10px; text-transform:uppercase; color:#8A6914;
+    font-weight:600; letter-spacing:0.06em; margin-bottom:4px;
+  }
+  .pa-current .val { font-size:14px; font-weight:600; color:var(--pa-text); }
+
+  .pa-input-group { margin-bottom:10px; }
+  .pa-input-label { font-size:11px; font-weight:600; color:var(--pa-text); margin-bottom:6px; }
+  .pa-input {
+    background:var(--pa-card);
+    border:1px solid var(--pa-border);
+    border-radius:6px;
+    padding:10px 12px;
+    font-size:12px;
+    color:var(--pa-text);
+  }
+  .pa-input.dropdown { display:flex; justify-content:space-between; align-items:center; }
+  .pa-input.dropdown::after { content:'▾'; color:var(--pa-text-3); }
+
+  .pa-actions {
+    display:flex; gap:8px;
+    margin-top:auto;
+    padding:12px 16px;
+    border-top:1px solid var(--pa-border);
+    background:var(--pa-card);
+    flex-shrink:0;
+  }
+  .pa-btn {
+    flex:1;
+    padding:10px;
+    border-radius:6px;
+    font-size:12px;
+    font-weight:600;
+    text-align:center;
+    cursor:pointer;
+  }
+  .pa-btn.primary { background:var(--pa-blue); color:#fff; }
+  .pa-btn.secondary { background:transparent; color:var(--pa-text); border:1px solid var(--pa-border); }
+
+  /* Notification mockup */
+  .notif-card {
+    max-width:480px;
+    margin:0 auto;
+    background:var(--pa-card);
+    color:var(--pa-text);
+    border-radius:14px;
+    padding:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.3);
+    font-family:'Segoe UI',sans-serif;
+  }
+  .notif-card .from {
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:14px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--pa-border);
+  }
+  .notif-card .from-icon {
+    width:36px; height:36px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--pa-blue),var(--pa-purple));
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-weight:700; font-size:14px;
+  }
+  .notif-card .from-name { font-weight:600; font-size:13px; }
+  .notif-card .from-meta { font-size:11px; color:var(--pa-text-3); }
+  .notif-card h4 { font-size:16px; margin-bottom:8px; }
+  .notif-card p { font-size:13px; color:var(--pa-text-2); margin-bottom:10px; line-height:1.55; }
+  .notif-card .btn-deep {
+    display:inline-block;
+    background:var(--pa-blue); color:#fff;
+    padding:9px 20px; border-radius:6px;
+    font-size:12px; font-weight:600;
+    text-decoration:none;
+    margin-top:8px;
+  }
+
+  /* TEAMS WEB MOCKUP */
+  .teams-window {
+    background:#1F1F23;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 40px 80px rgba(0,0,0,0.55), 0 16px 32px rgba(0,0,0,0.3);
+    border:1px solid var(--hairline-strong);
+    margin:20px auto;
+    max-width:1140px;
+  }
+  .teams-titlebar {
+    height:40px;
+    background:#2D2D2D;
+    display:flex;
+    align-items:center;
+    padding:0 16px;
+    gap:16px;
+    border-bottom:1px solid #3D3D42;
+  }
+  .window-dots { display:flex; gap:8px; }
+  .window-dots span { width:12px; height:12px; border-radius:50%; display:inline-block; }
+  .dot-red { background:#FF5F57; }
+  .dot-yellow { background:#FEBC2E; }
+  .dot-green { background:#28C840; }
+  .teams-search {
+    flex:1; max-width:560px; margin:0 auto;
+    background:#3D3D42; border-radius:6px;
+    padding:7px 14px; font-size:12px; color:#A19F9D;
+  }
+  .teams-profile {
+    width:26px; height:26px; border-radius:50%;
+    background:linear-gradient(135deg,#5B5FC7,#464775);
+    color:#fff; display:flex; align-items:center; justify-content:center;
+    font-size:10px; font-weight:600;
+    flex-shrink:0;
+  }
+  .teams-body { display:flex; min-height:620px; }
+  .teams-rail {
+    width:68px;
+    background:#1F1F23;
+    display:flex; flex-direction:column; align-items:center;
+    padding:12px 0; gap:6px;
+    border-right:1px solid #3D3D42;
+    flex-shrink:0;
+  }
+  .rail-icon {
+    width:44px; height:40px;
+    display:flex; align-items:center; justify-content:center;
+    color:#A19F9D; font-size:16px;
+    cursor:pointer;
+    border-radius:4px;
+    position:relative;
+  }
+  .rail-icon:hover { background:rgba(255,255,255,0.06); color:#fff; }
+  .rail-icon.active { color:#fff; }
+  .rail-icon.active::before {
+    content:''; position:absolute; left:0; top:8px; bottom:8px;
+    width:3px; background:#5B5FC7; border-radius:0 2px 2px 0;
+  }
+  .teams-content {
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    background:#F5F5F5;
+    overflow:hidden;
+  }
+  .teams-tabs {
+    background:#FFFFFF;
+    border-bottom:1px solid #E1E1E1;
+    display:flex;
+    align-items:center;
+    height:46px;
+    padding:0 22px;
+    gap:28px;
+    flex-shrink:0;
+  }
+  .team-tab {
+    font-size:13px;
+    color:#605E5C;
+    cursor:pointer;
+    padding:14px 0;
+    font-weight:500;
+  }
+  .team-tab.active {
+    color:#5B5FC7;
+    font-weight:600;
+    border-bottom:2px solid #5B5FC7;
+    padding-bottom:12px;
+  }
+  .teams-app {
+    flex:1;
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    overflow:hidden;
+  }
+
+  /* Power App Desktop */
+  .pad-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; }
+  .pad-title { font-size:18px; font-weight:700; color:#201F1E; margin-bottom:4px; }
+  .pad-stats {
+    display:flex; gap:24px;
+    font-size:10px; color:#605E5C;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+  .pad-stats span strong { color:#201F1E; font-size:14px; margin-right:5px; font-family:'Inter',sans-serif; }
+  .pad-btn {
+    background:#5B5FC7; color:#fff;
+    padding:8px 18px; border-radius:4px;
+    font-size:12px; font-weight:600;
+    cursor:pointer;
+  }
+  .pad-btn:hover { background:#464775; }
+
+  .pad-toolbar {
+    background:#fff;
+    border:1px solid #EDEBE9;
+    border-radius:6px;
+    padding:8px 12px;
+    display:flex;
+    gap:8px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .pad-select, .pad-input {
+    border:1px solid #EDEBE9;
+    border-radius:4px;
+    padding:6px 12px;
+    font-size:12px;
+    color:#201F1E;
+    background:#fff;
+    font-family:'Inter',sans-serif;
+  }
+  .pad-select { display:flex; align-items:center; cursor:pointer; }
+  .pad-select::after { content:'▾'; color:#A19F9D; margin-left:8px; }
+  .pad-input { flex:1; min-width:180px; max-width:240px; }
+  .pad-input::placeholder { color:#A19F9D; }
+
+  .pad-main {
+    flex:1;
+    display:grid;
+    grid-template-columns:1fr 340px;
+    gap:14px;
+    min-height:380px;
+  }
+
+  .pad-table-wrap { background:#fff; border:1px solid #EDEBE9; border-radius:6px; overflow:hidden; }
+  .pad-table { width:100%; border-collapse:collapse; font-size:12px; }
+  .pad-table th {
+    background:#FAFAF9; color:#605E5C; font-weight:600;
+    text-align:left; padding:10px 14px;
+    border-bottom:1px solid #EDEBE9;
+    font-size:10px; text-transform:uppercase; letter-spacing:0.06em;
+  }
+  .pad-table td { padding:11px 14px; border-bottom:1px solid #F3F2F1; color:#201F1E; }
+  .pad-table tr.selected {
+    background:#F0F4FA;
+    box-shadow:inset 3px 0 0 #5B5FC7;
+  }
+  .pad-table tr:hover:not(.selected) { background:#FAFAF9; cursor:pointer; }
+  .pad-table tr:last-child td { border-bottom:none; }
+
+  .pad-status {
+    display:inline-block;
+    padding:3px 10px;
+    border-radius:10px;
+    font-size:10px;
+    font-weight:600;
+    white-space:nowrap;
+  }
+  .st-yellow { background:#FFF4CE; color:#8A6914; }
+  .st-blue   { background:#DEECF9; color:#005A9E; }
+  .st-green  { background:#DFF6DD; color:#107C10; }
+  .st-purple { background:#E5DEFA; color:#5C2D91; }
+
+  .pad-side {
+    background:#fff;
+    border:1px solid #EDEBE9;
+    border-radius:6px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+  .pad-side-head { background:linear-gradient(135deg,#5B5FC7,#464775); color:#fff; padding:14px 16px; }
+  .pad-side-head .name { font-size:14px; font-weight:700; }
+  .pad-side-head .meta { font-size:11px; opacity:0.9; margin-top:3px; }
+  .pad-side-body { padding:14px; flex:1; overflow-y:auto; }
+  .pad-field { margin-bottom:11px; }
+  .pad-field-label {
+    font-size:10px; color:#605E5C; font-weight:600;
+    text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px;
+  }
+  .pad-field-input {
+    background:#FAFAF9; border:1px solid #EDEBE9;
+    border-radius:4px; padding:8px 10px;
+    font-size:12px; color:#201F1E;
+  }
+  .pad-field-input.dropdown { display:flex; justify-content:space-between; align-items:center; }
+  .pad-field-input.dropdown::after { content:'▾'; color:#A19F9D; }
+  .pad-toggle { display:flex; align-items:center; gap:10px; padding:6px 0; font-size:12px; color:#201F1E; }
+  .toggle-switch { width:32px; height:18px; background:#EDEBE9; border-radius:10px; position:relative; flex-shrink:0; }
+  .toggle-switch::after {
+    content:''; position:absolute;
+    width:14px; height:14px; border-radius:50%;
+    background:#fff; left:2px; top:2px;
+    box-shadow:0 1px 3px rgba(0,0,0,0.2);
+    transition:.2s;
+  }
+  .toggle-switch.on { background:#5B5FC7; }
+  .toggle-switch.on::after { left:16px; }
+  .pad-side-actions { border-top:1px solid #EDEBE9; padding:10px 14px; display:flex; gap:8px; flex-shrink:0; }
+  .pad-side-btn { flex:1; padding:8px; border-radius:4px; font-size:12px; font-weight:600; text-align:center; cursor:pointer; }
+  .pad-side-btn.primary { background:#5B5FC7; color:#fff; }
+  .pad-side-btn.secondary { background:transparent; color:#201F1E; border:1px solid #EDEBE9; }
+
+  @media (max-width:900px) {
+    .pad-main { grid-template-columns:1fr; }
+    .pad-stats { display:none; }
+    .teams-rail { width:48px; }
+    .rail-icon { width:36px; font-size:14px; }
+    .teams-tabs { gap:14px; padding:0 12px; }
+  }
+
+  /* BROWSER MOCKUP */
+  .browser-window {
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 40px 80px rgba(0,0,0,0.55), 0 16px 32px rgba(0,0,0,0.3);
+    border:1px solid var(--hairline-strong);
+    margin:20px auto;
+    max-width:1140px;
+    display:flex;
+    flex-direction:column;
+  }
+  .browser-chrome {
+    background:#DEE1E6;
+    height:40px;
+    display:flex;
+    align-items:flex-end;
+    padding:6px 16px 0;
+    gap:14px;
+    border-bottom:1px solid #BDC1C6;
+    flex-shrink:0;
+  }
+  .browser-chrome .window-dots { display:flex; gap:8px; padding-bottom:11px; }
+  .browser-chrome .window-dots span { width:12px; height:12px; border-radius:50%; display:inline-block; }
+  .browser-tabs { display:flex; align-items:flex-end; height:100%; gap:2px; flex:1; }
+  .browser-tab {
+    background:#E0E2E6;
+    color:#3C4043;
+    padding:9px 14px 10px;
+    border-radius:10px 10px 0 0;
+    font-size:12px;
+    font-weight:500;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    max-width:280px;
+    border:1px solid #BDC1C6;
+    border-bottom:none;
+    position:relative;
+    top:1px;
+  }
+  .browser-tab.active { background:#F5F5F5; color:#202124; font-weight:500; }
+  .browser-tab-add {
+    width:28px; height:28px;
+    display:flex; align-items:center; justify-content:center;
+    color:#5F6368; font-size:18px; cursor:pointer;
+    border-radius:50%; margin-bottom:6px;
+  }
+  .browser-tab-add:hover { background:rgba(0,0,0,0.06); }
+  .browser-url {
+    background:#F5F5F5;
+    height:50px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:0 14px;
+    border-bottom:1px solid #DADCE0;
+    flex-shrink:0;
+  }
+  .browser-nav-btns { display:flex; gap:2px; color:#5F6368; }
+  .browser-nav-btns span {
+    width:30px; height:30px;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; border-radius:50%; font-size:14px;
+  }
+  .browser-nav-btns span:hover { background:rgba(0,0,0,0.06); }
+  .url-bar {
+    flex:1;
+    background:#fff;
+    border:1px solid #DADCE0;
+    border-radius:24px;
+    height:36px;
+    display:flex;
+    align-items:center;
+    padding:0 14px;
+    font-size:13px;
+    gap:10px;
+    color:#202124;
+  }
+  .url-bar .lock { color:#3C4043; font-size:11px; }
+  .url-bar .url-text { color:#202124; font-family:'Inter',sans-serif; flex:1; font-size:12px; }
+  .url-bar .url-text .domain { color:#202124; }
+  .url-bar .url-text .path { color:#5F6368; }
+  .browser-extras { display:flex; gap:4px; color:#5F6368; }
+  .browser-extras span {
+    width:30px; height:30px;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; border-radius:50%; font-size:14px;
+  }
+  .browser-extras span:hover { background:rgba(0,0,0,0.06); }
+  .browser-content {
+    background:#F5F5F5;
+    min-height:560px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+  }
+  .pa-app {
+    flex:1;
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    overflow:hidden;
+  }
+
+  /* IMPLEMENTATION NOTES */
+  .impl-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+  }
+  .impl-card {
+    background:var(--surface);
+    border:1px solid var(--hairline);
+    border-radius:20px;
+    padding:28px;
+  }
+  .impl-card h3 {
+    font-size:18px; font-weight:600; margin-bottom:14px;
+    letter-spacing:-0.015em;
+    display:flex; align-items:center; gap:10px;
+  }
+  .impl-card h3 .num {
+    width:26px; height:26px;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    color:#fff;
+    border-radius:6px;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-size:12px; font-weight:700;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .impl-card p { color:var(--text-2); font-size:14px; line-height:1.65; margin-bottom:10px; }
+  .impl-card code, .impl-card pre {
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    background:var(--bg);
+    color:var(--accent-2);
+    padding:2px 6px;
+    border-radius:4px;
+  }
+  .impl-card pre {
+    display:block;
+    padding:14px;
+    overflow-x:auto;
+    border:1px solid var(--hairline);
+    color:var(--text);
+    line-height:1.6;
+    margin-top:8px;
+  }
+  .impl-card .kw { color:var(--accent); }
+  .impl-card .str { color:var(--green); }
+  .impl-card .fn { color:var(--accent-2); }
+  .impl-card ul { list-style:none; margin-top:8px; }
+  .impl-card li {
+    color:var(--text-2);
+    font-size:14px;
+    padding-left:18px;
+    position:relative;
+    margin-bottom:6px;
+  }
+  .impl-card li::before { content:'·'; position:absolute; left:6px; color:var(--accent-2); font-weight:700; }
+  .impl-card li strong { color:var(--text); }
+
+  footer { padding:40px 0; border-top:1px solid var(--hairline); text-align:center; color:var(--text-3); font-size:12px; }
+
+  @media (max-width:900px) {
+    .arch { grid-template-columns:1fr; }
+    .arch-step:not(:last-child)::after { content:'↓'; right:50%; top:auto; bottom:-12px; transform:translateX(50%); }
+    .impl-grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="container">
+    <span class="badge">Mockup · Power Apps + SharePoint + Power Automate</span>
+    <h1><span class="gradient-text">Reajuste</span> <span class="accent-text">Contratual.</span></h1>
+    <p class="lede">App Canvas para diretores atualizarem o status de reajuste financeiro durante reuniões de negociação — com notificação semanal automatizada e base centralizada.</p>
+    <div class="meta-row">
+      <span><strong>Plataforma:</strong> Power Apps Canvas</span>
+      <span><strong>Fonte de dados:</strong> SharePoint List</span>
+      <span><strong>Notificação:</strong> Power Automate</span>
+    </div>
+  </div>
+</header>
+
+<!-- ARQUITETURA -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Arquitetura</span>
+      <h2>Quatro componentes, integrados.</h2>
+      <p>Toda a stack opera dentro do Microsoft 365 — sem custos adicionais de infraestrutura, com autenticação corporativa nativa.</p>
+    </div>
+    <div class="arch">
+      <div class="arch-step">
+        <div class="icon">📋</div>
+        <div class="step-tag">FONTE DE DADOS</div>
+        <h4>SharePoint List</h4>
+        <p>Tabela centralizada com todos os clientes e colunas de acompanhamento.</p>
+      </div>
+      <div class="arch-step">
+        <div class="icon">💻</div>
+        <div class="step-tag">INTERFACE WEB</div>
+        <h4>Power Apps</h4>
+        <p>Canvas App acessado pelo navegador, compartilhado via Teams durante a reunião.</p>
+      </div>
+      <div class="arch-step">
+        <div class="icon">🔔</div>
+        <div class="step-tag">AUTOMAÇÃO</div>
+        <h4>Power Automate</h4>
+        <p>Notificação semanal via Outlook ou Teams com link direto.</p>
+      </div>
+      <div class="arch-step">
+        <div class="icon">📊</div>
+        <div class="step-tag">CONSUMO + FINANCEIRO</div>
+        <h4>Power BI</h4>
+        <p>Cruza o status operacional com os valores do banco financeiro — provisão de valor por etapa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TELAS DO APP -->
+<section style="background:linear-gradient(180deg, transparent, rgba(124,58,237,0.04), transparent); border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Visualização Web · Browser Standalone</span>
+      <h2>Pensado para reuniões compartilhadas.</h2>
+      <p>Os diretores acessam o app pelo navegador padrão e compartilham a tela via Teams durante a reunião de negociação — atualização ao vivo, com o time inteiro acompanhando o status mudar em tempo real.</p>
+    </div>
+
+    <div class="browser-window">
+      <div class="browser-chrome">
+        <div class="window-dots">
+          <span class="dot-red"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+        </div>
+        <div class="browser-tabs">
+          <div class="browser-tab active">📋 Reajuste Contratual · Power Apps</div>
+          <div class="browser-tab">Outlook</div>
+          <div class="browser-tab">SharePoint</div>
+        </div>
+        <div class="browser-tab-add">＋</div>
+      </div>
+      <div class="browser-url">
+        <div class="browser-nav-btns">
+          <span>‹</span><span>›</span><span>↻</span>
+        </div>
+        <div class="url-bar">
+          <span class="lock">🔒</span>
+          <span class="url-text"><span class="domain">apps.powerapps.com</span><span class="path">/play/e/default/a/reajuste-contratual</span></span>
+        </div>
+        <div class="browser-extras">
+          <span>★</span><span>⋮</span>
+        </div>
+      </div>
+      <div class="browser-content">
+        <div class="pa-app">
+
+            <div class="pad-header">
+              <div>
+                <div class="pad-title">Acompanhamento de Reajuste Contratual</div>
+                <div class="pad-stats">
+                  <span><strong>44</strong> clientes</span>
+                  <span><strong>13</strong> pendentes</span>
+                  <span><strong>R$ 2,4M</strong> em provisão</span>
+                  <span><strong>R$ 380K</strong> parados &gt; 30d</span>
+                </div>
+              </div>
+              <div class="pad-btn">+ Nova atualização</div>
+            </div>
+
+            <div class="pad-toolbar">
+              <div class="pad-select">Diretor: Carlos Mendes</div>
+              <div class="pad-select">Status: Todos</div>
+              <div class="pad-select">Período: 2026</div>
+              <input class="pad-input" placeholder="🔍  Buscar cliente...">
+            </div>
+
+            <div class="pad-main">
+              <div class="pad-table-wrap">
+                <table class="pad-table">
+                  <thead>
+                    <tr>
+                      <th>Cliente</th>
+                      <th>Grupo</th>
+                      <th>Status</th>
+                      <th>Início</th>
+                      <th>Follow UP</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="selected">
+                      <td><strong>Cliente Alpha S.A.</strong></td>
+                      <td>Grupo Alpha</td>
+                      <td><span class="pad-status st-yellow">Em negociação</span></td>
+                      <td>01/03/26</td>
+                      <td>15/05/26</td>
+                    </tr>
+                    <tr>
+                      <td>Beta Telecom</td>
+                      <td>Grupo Beta</td>
+                      <td><span class="pad-status st-blue">Aguardando aprov.</span></td>
+                      <td>15/02/26</td>
+                      <td>10/05/26</td>
+                    </tr>
+                    <tr>
+                      <td>Gamma Logística</td>
+                      <td>Grupo Gamma</td>
+                      <td><span class="pad-status st-purple">Carta enviada</span></td>
+                      <td>05/01/26</td>
+                      <td>20/05/26</td>
+                    </tr>
+                    <tr>
+                      <td>Delta Indústria</td>
+                      <td>Grupo Delta</td>
+                      <td><span class="pad-status st-green">Cobrança ativa</span></td>
+                      <td>10/12/25</td>
+                      <td>—</td>
+                    </tr>
+                    <tr>
+                      <td>Epsilon Services</td>
+                      <td>Grupo Epsilon</td>
+                      <td><span class="pad-status st-yellow">Em negociação</span></td>
+                      <td>20/03/26</td>
+                      <td>25/05/26</td>
+                    </tr>
+                    <tr>
+                      <td>Zeta Tecnologia</td>
+                      <td>Grupo Zeta</td>
+                      <td><span class="pad-status st-green">Cobrança ativa</span></td>
+                      <td>05/11/25</td>
+                      <td>—</td>
+                    </tr>
+                    <tr>
+                      <td>Eta Distribuição</td>
+                      <td>Grupo Eta</td>
+                      <td><span class="pad-status st-blue">Aguardando aprov.</span></td>
+                      <td>28/02/26</td>
+                      <td>12/05/26</td>
+                    </tr>
+                    <tr>
+                      <td>Theta Energia</td>
+                      <td>Grupo Theta</td>
+                      <td><span class="pad-status st-purple">Carta enviada</span></td>
+                      <td>14/01/26</td>
+                      <td>22/05/26</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="pad-side">
+                <div class="pad-side-head">
+                  <div class="name">Cliente Alpha S.A.</div>
+                  <div class="meta">Grupo Alpha · Carlos Mendes · J. Silva</div>
+                </div>
+                <div class="pad-side-body">
+                  <div class="pad-field">
+                    <div class="pad-field-label">Status Reajuste</div>
+                    <div class="pad-field-input dropdown">Em negociação</div>
+                  </div>
+                  <div class="pad-field">
+                    <div class="pad-field-label">Observação</div>
+                    <div class="pad-field-input" style="min-height:48px;line-height:1.45;">Reunião marcada para 12/05. Cliente solicitou revisão do índice.</div>
+                  </div>
+                  <div class="pad-field">
+                    <div class="pad-field-label">Data Início</div>
+                    <div class="pad-field-input">01/03/2026</div>
+                  </div>
+                  <div class="pad-field">
+                    <div class="pad-field-label">Data Envio Carta</div>
+                    <div class="pad-field-input" style="color:#A19F9D;">—</div>
+                  </div>
+                  <div class="pad-field">
+                    <div class="pad-field-label">Data Início Cobrança</div>
+                    <div class="pad-field-input" style="color:#A19F9D;">—</div>
+                  </div>
+                  <div class="pad-field">
+                    <div class="pad-field-label">Follow UP</div>
+                    <div class="pad-field-input">15/05/2026</div>
+                  </div>
+                  <div class="pad-toggle">
+                    <div class="toggle-switch"></div>
+                    <span>Retroativo a Data Início</span>
+                  </div>
+                </div>
+                <div class="pad-side-actions">
+                  <div class="pad-side-btn secondary">Cancelar</div>
+                  <div class="pad-side-btn primary">Salvar alterações</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    <div style="text-align:center; color:var(--text-3); font-size:13px; margin-top:28px; max-width:760px; margin-left:auto; margin-right:auto; line-height:1.6;">
+      Acesso via <strong style="color:var(--text-2);">navegador padrão</strong> (apps.powerapps.com) — compatível também com <strong style="color:var(--text-2);">tablet</strong> e <strong style="color:var(--text-2);">mobile</strong>, todos sincronizados com a SharePoint List em tempo real.
+    </div>
+
+    <div class="phones-row" style="display:none;">
+
+      <!-- PHONE 1: Director selection -->
+      <div class="phone-wrap">
+        <div class="phone-label"><span class="num">01</span> · TELA INICIAL</div>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="pa-statusbar"><span>9:41</span><span>●●●  ◷  ◉</span></div>
+            <div class="pa-hero">
+              <div class="logo">📋</div>
+              <div class="title">Reajuste Contratual</div>
+              <div class="desc">Selecione o diretor responsável</div>
+            </div>
+            <div class="pa-body" style="padding-top:8px;">
+              <div class="pa-section-label">Diretores</div>
+              <div class="pa-card"><div class="row">
+                <div class="pa-avatar">CM</div>
+                <div><div class="name">Carlos Mendes</div><div class="meta">12 clientes · 4 pendentes</div></div>
+                <div class="arrow">›</div>
+              </div></div>
+              <div class="pa-card"><div class="row">
+                <div class="pa-avatar">AR</div>
+                <div><div class="name">Ana Ribeiro</div><div class="meta">9 clientes · 2 pendentes</div></div>
+                <div class="arrow">›</div>
+              </div></div>
+              <div class="pa-card"><div class="row">
+                <div class="pa-avatar">PC</div>
+                <div><div class="name">Pedro Costa</div><div class="meta">15 clientes · 6 pendentes</div></div>
+                <div class="arrow">›</div>
+              </div></div>
+              <div class="pa-card"><div class="row">
+                <div class="pa-avatar">MS</div>
+                <div><div class="name">Marina Souza</div><div class="meta">8 clientes · 1 pendente</div></div>
+                <div class="arrow">›</div>
+              </div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHONE 2: Client list -->
+      <div class="phone-wrap">
+        <div class="phone-label"><span class="num">02</span> · CLIENTES DO DIRETOR</div>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="pa-statusbar"><span>9:41</span><span>●●●  ◷  ◉</span></div>
+            <div class="pa-header">
+              <div class="row"><span class="back">‹</span><h3>Carlos Mendes</h3></div>
+              <div class="sub">12 clientes sob gestão</div>
+            </div>
+            <div class="pa-body">
+              <div class="pa-search">🔍  Buscar cliente…</div>
+              <div class="pa-section-label">Pendentes de atualização</div>
+              <div class="pa-card">
+                <div class="name">Cliente Alpha S.A.</div>
+                <div class="meta">Grupo Alpha · Gerente: J. Silva</div>
+                <span class="pa-status">Em negociação</span>
+              </div>
+              <div class="pa-card">
+                <div class="name">Beta Telecom</div>
+                <div class="meta">Grupo Beta · Gerente: M. Costa</div>
+                <span class="pa-status">Aguardando aprovação</span>
+              </div>
+              <div class="pa-card">
+                <div class="name">Gamma Logística</div>
+                <div class="meta">Grupo Gamma · Gerente: R. Lopes</div>
+                <span class="pa-status blue">Carta enviada</span>
+              </div>
+              <div class="pa-section-label" style="margin-top:14px;">Atualizados</div>
+              <div class="pa-card">
+                <div class="name">Delta Indústria</div>
+                <div class="meta">Grupo Delta · Gerente: P. Souza</div>
+                <span class="pa-status green">Cobrança ativa</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHONE 3: Column selection -->
+      <div class="phone-wrap">
+        <div class="phone-label"><span class="num">03</span> · ESCOLHA O CAMPO</div>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="pa-statusbar"><span>9:41</span><span>●●●  ◷  ◉</span></div>
+            <div class="pa-header">
+              <div class="row"><span class="back">‹</span><h3>Cliente Alpha S.A.</h3></div>
+              <div class="sub">Grupo Alpha · Carlos Mendes</div>
+            </div>
+            <div class="pa-body">
+              <div class="pa-section-label">Identificação (somente leitura)</div>
+              <div class="col-row readonly"><div><div class="col-name">Grupo Cliente</div><div class="col-val">Grupo Alpha</div></div><span class="col-arrow">🔒</span></div>
+              <div class="col-row readonly"><div><div class="col-name">Nome Cliente</div><div class="col-val">Cliente Alpha S.A.</div></div><span class="col-arrow">🔒</span></div>
+              <div class="col-row readonly"><div><div class="col-name">Diretor</div><div class="col-val">Carlos Mendes</div></div><span class="col-arrow">🔒</span></div>
+              <div class="col-row readonly"><div><div class="col-name">Gerente</div><div class="col-val">J. Silva</div></div><span class="col-arrow">🔒</span></div>
+
+              <div class="pa-section-label" style="margin-top:14px;">Atualizáveis</div>
+              <div class="col-row"><div><div class="col-name">Status Reajuste</div><div class="col-val">Em negociação</div></div><span class="col-arrow">›</span></div>
+              <div class="col-row"><div><div class="col-name">Observação</div><div class="col-val">Reunião marcada p/ 12/05</div></div><span class="col-arrow">›</span></div>
+              <div class="col-row"><div><div class="col-name">Data Início</div><div class="col-val">01/03/2026</div></div><span class="col-arrow">›</span></div>
+              <div class="col-row"><div><div class="col-name">Data Envio Carta</div><div class="col-val">— vazio —</div></div><span class="col-arrow">›</span></div>
+              <div class="col-row"><div><div class="col-name">Data Início Cobrança</div><div class="col-val">— vazio —</div></div><span class="col-arrow">›</span></div>
+              <div class="col-row"><div><div class="col-name">Follow UP</div><div class="col-val">15/05/2026</div></div><span class="col-arrow">›</span></div>
+              <div class="col-row"><div><div class="col-name">Retroativo a Data Início</div><div class="col-val">Não</div></div><span class="col-arrow">›</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHONE 4: Edit field -->
+      <div class="phone-wrap">
+        <div class="phone-label"><span class="num">04</span> · EDIÇÃO DO CAMPO</div>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="pa-statusbar"><span>9:41</span><span>●●●  ◷  ◉</span></div>
+            <div class="pa-header">
+              <div class="row"><span class="back">‹</span><h3>Editar: Status Reajuste</h3></div>
+              <div class="sub">Cliente Alpha S.A.</div>
+            </div>
+            <div class="pa-body">
+              <div class="pa-current">
+                <div class="lab">Valor atual</div>
+                <div class="val">Em negociação</div>
+              </div>
+
+              <div class="pa-input-group">
+                <div class="pa-input-label">Novo valor</div>
+                <div class="pa-input dropdown">Aguardando aprovação</div>
+              </div>
+
+              <div class="pa-input-group">
+                <div class="pa-input-label">Comentário (opcional)</div>
+                <div class="pa-input" style="min-height:60px; color:var(--pa-text-3);">Ex: cliente aceitou proposta, aguardando assinatura…</div>
+              </div>
+
+              <div class="pa-input-group">
+                <div class="pa-input-label">Atualizado em</div>
+                <div class="pa-input" style="color:var(--pa-text-2);">05/05/2026 · 09:41</div>
+              </div>
+            </div>
+            <div class="pa-actions">
+              <div class="pa-btn secondary">Cancelar</div>
+              <div class="pa-btn primary">Salvar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NOTIFICAÇÃO SEMANAL -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Notificação Semanal</span>
+      <h2>Toda segunda, no inbox.</h2>
+      <p>Power Automate dispara o lembrete às segundas às 9h, com link direto para o app filtrado pelo diretor.</p>
+    </div>
+    <div class="notif-card">
+      <div class="from">
+        <div class="from-icon">📋</div>
+        <div>
+          <div class="from-name">Reajuste Contratual · Power Apps</div>
+          <div class="from-meta">para: carlos.mendes@empresa.com · seg, 9:00</div>
+        </div>
+      </div>
+      <h4>Olá, Carlos! 👋</h4>
+      <p>Esta é a sua atualização semanal de <strong>reajustes contratuais</strong>. Você tem <strong>4 clientes pendentes</strong> de atualização sob sua gestão:</p>
+      <p style="margin-left:14px;">• Cliente Alpha S.A. — Em negociação<br>• Beta Telecom — Aguardando aprovação<br>• Gamma Logística — Carta enviada<br>• Epsilon Services — Em negociação</p>
+      <p>Atualize antes da próxima reunião de comitê — basta abrir o app pelo link abaixo:</p>
+      <a href="#" class="btn-deep">Abrir Reajuste Contratual →</a>
+    </div>
+  </div>
+</section>
+
+<!-- IMPLEMENTAÇÃO -->
+<section style="border-top:1px solid var(--hairline);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Blueprint de Implementação</span>
+      <h2>Como construir, na prática.</h2>
+      <p>Cada peça da arquitetura, com sua receita básica.</p>
+    </div>
+
+    <div class="impl-grid">
+
+      <div class="impl-card">
+        <h3><span class="num">1</span> SharePoint List · Estrutura</h3>
+        <p>Crie uma lista <code>ReajusteContratual</code> com as colunas:</p>
+        <ul>
+          <li><strong>GrupoCliente</strong> — Texto</li>
+          <li><strong>NomeCliente</strong> — Texto</li>
+          <li><strong>Diretor</strong> — Pessoa (ou Choice)</li>
+          <li><strong>Gerente</strong> — Pessoa (ou Texto)</li>
+          <li><strong>StatusReajuste</strong> — Choice (Em negociação / Aguardando aprovação / Aprovado / Carta enviada / Cobrança ativa / Concluído)</li>
+          <li><strong>Observacao</strong> — Texto multilinhas</li>
+          <li><strong>DataInicio</strong> — Data</li>
+          <li><strong>DataEnvioCarta</strong> — Data</li>
+          <li><strong>DataInicioCobranca</strong> — Data</li>
+          <li><strong>FollowUp</strong> — Data</li>
+          <li><strong>RetroativoDataInicio</strong> — Sim/Não</li>
+          <li><strong>UltimaAtualizacao</strong> — Data e hora (auto)</li>
+          <li><strong>AtualizadoPor</strong> — Pessoa (auto)</li>
+        </ul>
+      </div>
+
+      <div class="impl-card">
+        <h3><span class="num">2</span> Power Apps · Telas</h3>
+        <p>Canvas App com 4 telas: <code>scrHome</code>, <code>scrClients</code>, <code>scrColumns</code>, <code>scrEdit</code>.</p>
+        <p style="margin-top:10px;"><strong>Galeria de diretores (scrHome):</strong></p>
+<pre><span class="fn">Distinct</span>(ReajusteContratual, Diretor.DisplayName)</pre>
+        <p><strong>Galeria de clientes (scrClients):</strong></p>
+<pre><span class="fn">Filter</span>(
+  ReajusteContratual,
+  Diretor.DisplayName = varDiretor
+)</pre>
+        <p><strong>Salvar nova atualização (scrEdit, botão Salvar):</strong></p>
+<pre><span class="fn">Patch</span>(
+  ReajusteContratual,
+  varClienteSelecionado,
+  { StatusReajuste: drpNovoValor.<span class="kw">Selected</span>.Value,
+    UltimaAtualizacao: <span class="fn">Now</span>(),
+    AtualizadoPor: User() }
+);
+<span class="fn">Navigate</span>(scrColumns, ScreenTransition.Fade)</pre>
+      </div>
+
+      <div class="impl-card">
+        <h3><span class="num">3</span> Power Automate · Notificação</h3>
+        <p>Fluxo agendado <strong>Recorrência: toda segunda às 9h</strong>.</p>
+        <ul>
+          <li><strong>Get items</strong> da lista <code>ReajusteContratual</code></li>
+          <li><strong>Group by Diretor</strong> (variável de array)</li>
+          <li><strong>Apply to each diretor</strong> → <strong>Send email (V2)</strong> personalizado com a contagem de pendentes daquele diretor + link do app</li>
+          <li>Opcional: integração com <strong>Teams</strong> (Post message in chat) em vez de e-mail</li>
+        </ul>
+        <p style="margin-top:10px;">Link direto do app filtrado: use <code>Param(<span class="str">"diretor"</span>)</code> no <code>OnStart</code> e passe <code>?diretor=Carlos%20Mendes</code> na URL.</p>
+      </div>
+
+      <div class="impl-card">
+        <h3><span class="num">4</span> Power BI · Provisão de valor por etapa</h3>
+        <p>O dashboard cruza <strong>duas fontes</strong> e expõe quanto valor financeiro está provisionado em cada estágio do funil de reajuste — transformando o acompanhamento de status em uma visão de impacto financeiro real.</p>
+
+        <p style="margin-top:10px;"><strong>Fontes integradas:</strong></p>
+        <ul>
+          <li><strong>SharePoint List</strong> — estado operacional do reajuste (status, datas, diretor responsável)</li>
+          <li><strong>Banco Financeiro</strong> — valores contratuais, faturamento atual, base de cálculo do reajuste</li>
+        </ul>
+
+        <p style="margin-top:14px;"><strong>Modelagem (Star Schema):</strong></p>
+<pre><span class="kw">// Tabela fato: cruza operacional + financeiro</span>
+fato_Reajuste =
+  <span class="fn">NATURALINNERJOIN</span>(
+    SharePoint_Reajuste,
+    Financeiro_Contratos
+  )
+<span class="kw">// Chave de relacionamento: NomeCliente + GrupoCliente</span></pre>
+
+        <p style="margin-top:10px;"><strong>Métricas DAX-chave:</strong></p>
+<pre>ProvisaoEmNegociacao =
+  <span class="fn">CALCULATE</span>(
+    <span class="fn">SUM</span>(fato_Reajuste[ValorReajuste]),
+    fato_Reajuste[StatusReajuste] = <span class="str">"Em negociação"</span>
+  )
+
+ImpactoMensalAcumulado =
+  <span class="fn">CALCULATE</span>(
+    <span class="fn">SUMX</span>(fato_Reajuste,
+      [ValorReajuste] * <span class="fn">DATEDIFF</span>([DataInicio], <span class="fn">TODAY</span>(), MONTH)
+    ),
+    fato_Reajuste[StatusReajuste] &lt;&gt; <span class="str">"Concluído"</span>
+  )</pre>
+
+        <p style="margin-top:14px;"><strong>Visualizações sugeridas:</strong></p>
+        <ul>
+          <li><strong>Funil financeiro</strong> — R$ provisionado em cada etapa (Em negociação → Aguardando aprov. → Carta enviada → Cobrança → Concluído)</li>
+          <li><strong>Cards de KPI</strong> — Provisão total · Valor já em cobrança · Valor parado &gt; 30 dias · Impacto mensal acumulado</li>
+          <li><strong>Ranking por diretor</strong> — quem tem mais valor preso em cada etapa</li>
+          <li><strong>Aging financeiro</strong> — distribuição dos valores por tempo no estágio (gargalo financeiro)</li>
+          <li><strong>Gap entre Data Início e Início Cobrança</strong> — perda mensal acumulada por atraso</li>
+        </ul>
+        <p style="margin-top:10px;">Resultado: cada vez que um diretor atualiza um status no app, o dashboard recalcula <strong>quanto valor saiu de uma etapa para outra</strong> — dando ao financeiro previsibilidade real sobre quando aquele reajuste vira receita.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 Valério Luiz Dantas Reis · Mockup conceitual para construção em Power Apps</div>
+</footer>
+
+</body>
+</html>

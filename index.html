@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valério Reis — Analista de BI Sênior</title>
+<meta name="description" content="Portfólio de Valério Luiz Dantas Reis — Analista de BI Sênior em Power BI, SQL Server, Python, Power Apps e automações. 10+ anos transformando dados em decisões.">
+<meta name="author" content="Valério Luiz Dantas Reis">
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Valério Reis — Analista de BI Sênior">
+<meta property="og:description" content="Power BI · SQL · Python · Power Apps. 10+ anos transformando dados em decisões.">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Valério Reis — Analista de BI Sênior">
+<meta name="twitter:description" content="Power BI · SQL · Python · Power Apps. 10+ anos transformando dados em decisões.">
+
+<!-- Favicon (SVG inline) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%237c3aed'/><stop offset='1' stop-color='%2322d3ee'/></linearGradient></defs><rect width='100' height='100' rx='22' fill='%23000'/><text x='50' y='68' font-family='Inter,sans-serif' font-size='56' font-weight='700' fill='url(%23g)' text-anchor='middle'>V</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+  :root {
+    --bg:#000000;
+    --bg-2:#0a0a0a;
+    --surface:#111113;
+    --surface-2:#161618;
+    --hairline:rgba(255,255,255,0.08);
+    --hairline-strong:rgba(255,255,255,0.14);
+    --text:#f5f5f7;
+    --text-2:#a1a1a6;
+    --text-3:#6e6e73;
+    --accent:#7c3aed;
+    --accent-2:#22d3ee;
+    --accent-3:#f472b6;
+    --green:#34d399;
+    --red:#f87171;
+  }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Inter','SF Pro Display','-apple-system','BlinkMacSystemFont',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.5;
+    overflow-x:hidden;
+    font-feature-settings:"ss01","cv11";
+  }
+  ::selection { background:var(--accent); color:#fff; }
+
+  .container { max-width:1180px; margin:0 auto; padding:0 24px; }
+  .container-narrow { max-width:880px; margin:0 auto; padding:0 24px; }
+
+  /* TYPE — Apple-style */
+  .display {
+    font-size:clamp(48px, 8vw, 96px);
+    font-weight:700;
+    line-height:1.04;
+    letter-spacing:-0.045em;
+  }
+  .h1 {
+    font-size:clamp(40px, 5.5vw, 64px);
+    font-weight:700;
+    line-height:1.06;
+    letter-spacing:-0.035em;
+  }
+  .h2 {
+    font-size:clamp(32px, 4vw, 48px);
+    font-weight:600;
+    line-height:1.1;
+    letter-spacing:-0.025em;
+  }
+  .h3 {
+    font-size:24px;
+    font-weight:600;
+    letter-spacing:-0.015em;
+  }
+  .eyebrow {
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:0.04em;
+    color:var(--accent-2);
+    text-transform:uppercase;
+  }
+  .lede {
+    font-size:clamp(18px, 1.6vw, 22px);
+    color:var(--text-2);
+    line-height:1.5;
+    font-weight:400;
+    letter-spacing:-0.01em;
+  }
+  .gradient-text {
+    background:linear-gradient(135deg, #fff 0%, #a1a1a6 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .accent-text {
+    background:linear-gradient(135deg,var(--accent) 0%,var(--accent-2) 60%,var(--accent-3) 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+
+  /* NAV — Apple-style */
+  nav {
+    position:fixed; top:0; left:0; right:0;
+    backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    background:rgba(0,0,0,0.72);
+    border-bottom:1px solid var(--hairline);
+    z-index:100;
+    height:48px;
+  }
+  nav .container { display:flex; justify-content:space-between; align-items:center; height:100%; }
+  .logo {
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:-0.02em;
+  }
+  nav ul { display:flex; list-style:none; gap:32px; }
+  nav a {
+    color:var(--text);
+    text-decoration:none;
+    font-size:12px;
+    font-weight:400;
+    opacity:0.85;
+    transition:opacity .2s;
+  }
+  nav a:hover { opacity:1; }
+
+  /* HERO */
+  .hero {
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:140px 24px 80px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before {
+    content:'';
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124,58,237,0.18), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 50% 110%, rgba(34,211,238,0.12), transparent 60%);
+    pointer-events:none;
+  }
+  .hero-content { position:relative; z-index:1; max-width:920px; }
+  .hero .badge {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 14px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid var(--hairline-strong);
+    border-radius:999px;
+    font-size:12px;
+    color:var(--text-2);
+    margin-bottom:32px;
+  }
+  .badge .pulse {
+    width:6px; height:6px; border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 0 0 rgba(52,211,153,0.5);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow:0 0 0 0 rgba(52,211,153,0.6); }
+    70% { box-shadow:0 0 0 8px rgba(52,211,153,0); }
+    100% { box-shadow:0 0 0 0 rgba(52,211,153,0); }
+  }
+  .hero .lede { margin:24px auto 40px; max-width:680px; }
+  .hero-cta { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+  .btn {
+    padding:14px 28px;
+    border-radius:999px;
+    font-weight:500;
+    font-size:14px;
+    text-decoration:none;
+    transition:all .2s;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .btn-primary {
+    background:#fff;
+    color:#000;
+  }
+  .btn-primary:hover { background:#e5e5e7; transform:scale(1.02); }
+  .btn-secondary {
+    background:transparent;
+    color:var(--text);
+    border:1px solid var(--hairline-strong);
+  }
+  .btn-secondary:hover { border-color:#fff; }
+  .btn-link {
+    color:var(--accent-2);
+    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
+    display:inline-flex; align-items:center; gap:4px;
+    transition:gap .2s;
+  }
+  .btn-link:hover { gap:8px; }
+
+  /* SECTIONS */
+  section { padding:120px 0; position:relative; }
+  .section-head { text-align:center; margin-bottom:80px; }
+  .section-head .eyebrow { margin-bottom:16px; display:block; }
+
+  /* BENTO GRID */
+  .bento {
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    grid-auto-rows:minmax(180px, auto);
+    gap:16px;
+  }
+  .bento-card {
+    background:var(--surface);
+    border:1px solid var(--hairline);
+    border-radius:24px;
+    padding:32px;
+    position:relative;
+    overflow:hidden;
+    transition:border-color .3s, transform .3s;
+  }
+  .bento-card:hover { border-color:var(--hairline-strong); transform:translateY(-2px); }
+  .bento-card .label {
+    font-size:13px;
+    color:var(--text-3);
+    font-weight:500;
+    margin-bottom:12px;
+  }
+  .bento-card .big-num {
+    font-size:clamp(56px, 7vw, 80px);
+    font-weight:700;
+    line-height:1;
+    letter-spacing:-0.04em;
+    margin-bottom:8px;
+  }
+  .bento-card .desc {
+    color:var(--text-2);
+    font-size:15px;
+    letter-spacing:-0.01em;
+  }
+  .span-3 { grid-column:span 3; }
+  .span-2 { grid-column:span 2; }
+  .span-4 { grid-column:span 4; }
+  .span-6 { grid-column:span 6; }
+  .row-2 { grid-row:span 2; }
+
+  /* SKILLS Bento */
+  .skill-card .icon {
+    width:44px; height:44px;
+    border-radius:12px;
+    background:linear-gradient(135deg, rgba(124,58,237,0.18), rgba(34,211,238,0.18));
+    display:flex; align-items:center; justify-content:center;
+    font-size:22px;
+    margin-bottom:20px;
+  }
+  .skill-card h3 { font-size:18px; font-weight:600; margin-bottom:12px; letter-spacing:-0.01em; }
+  .skill-tags { display:flex; flex-wrap:wrap; gap:6px; }
+  .tag {
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    padding:4px 10px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--hairline);
+    border-radius:6px;
+    color:var(--text-2);
+  }
+
+  /* CASE STUDY — Apple feature page */
+  .case-hero {
+    text-align:center;
+    padding:120px 0 80px;
+    background:linear-gradient(180deg, transparent 0%, rgba(124,58,237,0.04) 50%, transparent 100%);
+    border-top:1px solid var(--hairline);
+    border-bottom:1px solid var(--hairline);
+  }
+  .case-hero .case-tag {
+    display:inline-block;
+    padding:6px 14px;
+    background:rgba(124,58,237,0.12);
+    border:1px solid rgba(124,58,237,0.3);
+    border-radius:999px;
+    font-size:12px;
+    color:#c4b5fd;
+    margin-bottom:24px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  .case-hero h2 {
+    margin-bottom:16px;
+  }
+  .case-hero .subtitle {
+    color:var(--text-2);
+    font-size:clamp(20px, 2vw, 28px);
+    font-weight:400;
+    letter-spacing:-0.015em;
+  }
+
+  /* IMPACT NUMBERS */
+  .impact-grid {
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--hairline);
+    border-radius:24px;
+    overflow:hidden;
+    margin:64px 0;
+    border:1px solid var(--hairline);
+  }
+  .impact-cell {
+    background:var(--bg);
+    padding:48px 32px;
+    text-align:center;
+  }
+  .impact-cell .num {
+    font-size:clamp(40px, 5vw, 64px);
+    font-weight:700;
+    letter-spacing:-0.04em;
+    line-height:1;
+    margin-bottom:12px;
+  }
+  .impact-cell .num.red { color:var(--red); }
+  .impact-cell .num.green { color:var(--green); }
+  .impact-cell .num.gradient {
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .impact-cell .lbl { color:var(--text-2); font-size:14px; }
+
+  /* CASE STORY blocks */
+  .case-block { padding:80px 0; }
+  .case-block:not(:last-child) { border-bottom:1px solid var(--hairline); }
+  .case-block .eyebrow { margin-bottom:16px; display:block; }
+  .case-block h3 { margin-bottom:20px; }
+  .case-block p {
+    color:var(--text-2);
+    font-size:18px;
+    line-height:1.65;
+    letter-spacing:-0.01em;
+    max-width:760px;
+  }
+  .case-block p + p { margin-top:16px; }
+  .case-skills { margin-top:32px; padding-top:24px; border-top:1px solid var(--hairline); }
+  .case-skills .skills-row {
+    display:flex; flex-wrap:wrap; gap:8px;
+  }
+  .case-skills .skills-row .tag { font-size:12px; padding:6px 12px; }
+
+  /* TIMELINE / EXPERIENCE */
+  .exp-list { display:flex; flex-direction:column; gap:0; }
+  .exp-item {
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:48px;
+    padding:40px 0;
+    border-top:1px solid var(--hairline);
+  }
+  .exp-item:last-child { border-bottom:1px solid var(--hairline); }
+  .exp-period {
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    color:var(--text-3);
+    padding-top:6px;
+    letter-spacing:-0.01em;
+  }
+  .exp-content h3 { font-size:22px; margin-bottom:4px; letter-spacing:-0.015em; }
+  .exp-content .company { color:var(--accent-2); font-size:14px; margin-bottom:16px; font-weight:500; }
+  .exp-content ul { list-style:none; }
+  .exp-content li {
+    color:var(--text-2);
+    font-size:16px;
+    padding-left:20px;
+    position:relative;
+    margin-bottom:6px;
+    letter-spacing:-0.01em;
+  }
+  .exp-content li::before {
+    content:'·'; position:absolute; left:6px; color:var(--accent-2); font-weight:700;
+  }
+
+  /* PIPELINE diagram */
+  .pipeline {
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:12px;
+    margin:48px 0 32px;
+    align-items:stretch;
+  }
+  .pipe-step {
+    background:var(--surface);
+    border:1px solid var(--hairline);
+    border-radius:20px;
+    padding:28px 20px;
+    text-align:center;
+    position:relative;
+    transition:border-color .3s, transform .3s;
+  }
+  .pipe-step:hover { border-color:var(--hairline-strong); transform:translateY(-2px); }
+  .pipe-step .step-icon {
+    width:52px; height:52px;
+    border-radius:14px;
+    background:linear-gradient(135deg, rgba(124,58,237,0.2), rgba(34,211,238,0.18));
+    display:flex; align-items:center; justify-content:center;
+    font-size:24px;
+    margin:0 auto 16px;
+  }
+  .pipe-step .step-num {
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:var(--text-3);
+    letter-spacing:0.06em;
+    margin-bottom:8px;
+  }
+  .pipe-step h4 {
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:6px;
+    letter-spacing:-0.01em;
+  }
+  .pipe-step p {
+    color:var(--text-2);
+    font-size:13px;
+    line-height:1.45;
+    letter-spacing:-0.005em;
+    margin:0;
+  }
+  .pipe-step:not(:last-child)::after {
+    content:'→';
+    position:absolute;
+    right:-14px; top:50%;
+    transform:translateY(-50%);
+    color:var(--accent-2);
+    font-size:18px;
+    font-weight:300;
+    z-index:2;
+    background:var(--bg);
+    width:24px; height:24px;
+    display:flex; align-items:center; justify-content:center;
+    border-radius:50%;
+  }
+  @media (max-width:900px) {
+    .pipeline { grid-template-columns:1fr; }
+    .pipe-step:not(:last-child)::after {
+      content:'↓';
+      right:50%; top:auto; bottom:-14px;
+      transform:translateX(50%);
+    }
+  }
+
+  /* CONTACT */
+  .contact { text-align:center; padding:160px 0; }
+  .contact h2 { margin-bottom:24px; }
+  .contact .lede { margin:0 auto 48px; max-width:540px; }
+  .contact-info { display:flex; justify-content:center; gap:8px; flex-wrap:wrap; }
+  .contact-pill {
+    padding:12px 20px;
+    background:var(--surface);
+    border:1px solid var(--hairline);
+    border-radius:999px;
+    color:var(--text);
+    text-decoration:none;
+    font-size:14px;
+    transition:all .2s;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .contact-pill:hover { border-color:var(--hairline-strong); background:var(--surface-2); }
+
+  footer { padding:32px 0; border-top:1px solid var(--hairline); text-align:center; color:var(--text-3); font-size:12px; }
+  footer a { color:var(--text-3); text-decoration:none; }
+
+  /* Reveal animation */
+  .reveal { opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity:1; transform:translateY(0); }
+
+  @media (max-width:900px) {
+    nav ul { display:none; }
+    .bento { grid-template-columns:repeat(2,1fr); }
+    .span-3, .span-2, .span-4, .span-6 { grid-column:span 2; }
+    .row-2 { grid-row:auto; }
+    .impact-grid { grid-template-columns:1fr; }
+    .exp-item { grid-template-columns:1fr; gap:8px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">Valério Reis</div>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#skills">Stack</a></li>
+      <li><a href="#case">Casos</a></li>
+      <li><a href="#experiencia">Experiência</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="badge"><span class="pulse"></span> Disponível para novos desafios</span>
+    <h1 class="display">
+      <span class="gradient-text">Dados que viram</span><br>
+      <span class="accent-text">decisões.</span>
+    </h1>
+    <p class="lede">Sou Valério Reis, Analista de BI Sênior. Construo dashboards, pipelines e automações que transformam operações inteiras — e mostram, com precisão, onde está o resultado.</p>
+    <div class="hero-cta">
+      <a href="#case" class="btn btn-primary">Ver caso em destaque</a>
+      <a href="#contato" class="btn btn-secondary">Falar comigo</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE — Bento Grid -->
+<section id="sobre">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Sobre</span>
+      <h2 class="h1 gradient-text">Uma trajetória<br>orientada a impacto.</h2>
+    </div>
+
+    <div class="bento reveal">
+      <div class="bento-card span-3 row-2">
+        <span class="label">Resumo</span>
+        <h3 class="h3" style="margin-bottom:16px;">Mais de 10 anos transformando operações através de dados.</h3>
+        <p style="color:var(--text-2); font-size:16px; line-height:1.6; letter-spacing:-0.01em;">Atuação ponta a ponta: do levantamento de requisitos com clientes ao desenvolvimento de dashboards estratégicos, passando por ETL, automações e modelagem dimensional. Foco em resultado mensurável.</p>
+        <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+          <span class="tag">Power BI</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Python</span>
+          <span class="tag">Azure</span>
+        </div>
+      </div>
+
+      <div class="bento-card span-3">
+        <span class="label">Anos de Experiência</span>
+        <div class="big-num accent-text">10+</div>
+        <p class="desc">em dados, operações e liderança técnica.</p>
+      </div>
+
+      <div class="bento-card span-3">
+        <span class="label">Foco em BI</span>
+        <div class="big-num accent-text">3+</div>
+        <p class="desc">anos como Analista de BI/MIS.</p>
+      </div>
+
+      <div class="bento-card span-2">
+        <span class="label">Localização</span>
+        <h3 class="h3">Aracaju, SE</h3>
+        <p class="desc" style="margin-top:8px;">Aberto a remoto e híbrido.</p>
+      </div>
+
+      <div class="bento-card span-2">
+        <span class="label">Idiomas</span>
+        <h3 class="h3">PT · EN</h3>
+        <p class="desc" style="margin-top:8px;">Inglês avançado.</p>
+      </div>
+
+      <div class="bento-card span-2">
+        <span class="label">Certificações</span>
+        <div class="big-num" style="font-size:64px;">5</div>
+        <p class="desc">cursos concluídos + formação em andamento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS — Bento Grid -->
+<section id="skills" style="padding-top:40px;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Stack Técnica</span>
+      <h2 class="h1 gradient-text">Tudo que é preciso<br>para entregar valor.</h2>
+    </div>
+
+    <div class="bento reveal">
+      <div class="bento-card skill-card span-2">
+        <div class="icon">📊</div>
+        <h3>BI & Visualização</h3>
+        <div class="skill-tags">
+          <span class="tag">Power BI</span>
+          <span class="tag">DAX</span>
+          <span class="tag">Power Query M</span>
+          <span class="tag">Dashboards</span>
+        </div>
+      </div>
+      <div class="bento-card skill-card span-2">
+        <div class="icon">🗄️</div>
+        <h3>Banco de Dados</h3>
+        <div class="skill-tags">
+          <span class="tag">SQL Server</span>
+          <span class="tag">T-SQL</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Star Schema</span>
+          <span class="tag">DW</span>
+        </div>
+      </div>
+      <div class="bento-card skill-card span-2">
+        <div class="icon">🐍</div>
+        <h3>Python & Dados</h3>
+        <div class="skill-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">ETL</span>
+          <span class="tag">Big Data</span>
+        </div>
+      </div>
+      <div class="bento-card skill-card span-2">
+        <div class="icon">⚙️</div>
+        <h3>Automação & RPA</h3>
+        <div class="skill-tags">
+          <span class="tag">Power Automate</span>
+          <span class="tag">SSIS</span>
+          <span class="tag">VBA</span>
+          <span class="tag">RPA</span>
+        </div>
+      </div>
+      <div class="bento-card skill-card span-2">
+        <div class="icon">☁️</div>
+        <h3>Cloud & Pipelines</h3>
+        <div class="skill-tags">
+          <span class="tag">Azure Databricks</span>
+          <span class="tag">Pipelines</span>
+        </div>
+      </div>
+      <div class="bento-card skill-card span-2">
+        <div class="icon">🛠️</div>
+        <h3>Métodos & Ferramentas</h3>
+        <div class="skill-tags">
+          <span class="tag">Kanban</span>
+          <span class="tag">DBeaver</span>
+          <span class="tag">SharePoint</span>
+          <span class="tag">Figma</span>
+          <span class="tag">Excel</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY — Apple feature page -->
+<section id="case" style="padding:0;">
+  <div class="case-hero">
+    <div class="container-narrow reveal">
+      <span class="case-tag">Caso 01 · Liderança & Resultado</span>
+      <h2 class="display gradient-text">Reversão de Penalidades<br>Contratuais.</h2>
+      <p class="subtitle">De <span style="color:var(--red)">−R$200k/mês</span> a <span style="color:var(--green)">+R$200k/mês</span>.<br>Um giro de R$400 mil mensais.</p>
+    </div>
+  </div>
+
+  <!-- Impact numbers -->
+  <div class="container reveal">
+    <div class="impact-grid">
+      <div class="impact-cell">
+        <div class="num red">−R$200k</div>
+        <div class="lbl">Ônus mensal antes da intervenção</div>
+      </div>
+      <div class="impact-cell">
+        <div class="num green">+R$200k</div>
+        <div class="lbl">Bônus mensal após a virada</div>
+      </div>
+      <div class="impact-cell">
+        <div class="num gradient">+R$400k</div>
+        <div class="lbl">Impacto financeiro mensal</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Story blocks -->
+  <div class="container-narrow">
+
+    <div class="case-block reveal">
+      <span class="eyebrow">01 · Contexto</span>
+      <h3 class="h2 gradient-text">Penalidades de até R$200k todos os meses.</h3>
+      <p>A operação enfrentava penalidades contratuais recorrentes que chegavam a R$200 mil mensais, decorrentes de indicadores de desempenho abaixo das metas estabelecidas pelo cliente final.</p>
+      <p>Os dados necessários para diagnóstico estavam dispersos entre três fontes distintas — o cliente final, a operadora de telefonia e o call center — sem integração ou visibilidade consolidada.</p>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="eyebrow">02 · Minha atuação</span>
+      <h3 class="h2 gradient-text">Liderar, integrar e iluminar a causa-raiz.</h3>
+      <p>Liderei a equipe responsável por centralizar e cruzar os dados das três fontes, criando uma base analítica unificada que permitiu identificar as causas-raiz dos desvios nos indicadores.</p>
+      <p>Desenvolvi automações em VBA para ingestão, tratamento e consolidação dos dados, eliminando processos manuais e garantindo agilidade na geração dos relatórios gerenciais.</p>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="eyebrow">03 · Ações implementadas</span>
+      <h3 class="h2 gradient-text">De reativo para preventivo.</h3>
+      <p>A partir da análise integrada dos dados, direcionamos melhorias em diversas frentes operacionais — desde ajustes em processos internos do call center até alinhamentos com a operadora de telefonia e o cliente final.</p>
+      <p>Os relatórios automatizados passaram a fornecer visibilidade contínua sobre os indicadores, permitindo atuação preventiva em vez de reativa.</p>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="eyebrow">04 · Resultado</span>
+      <h3 class="h2 gradient-text">Uma virada de R$400 mil/mês.</h3>
+      <p>A operação saiu de um cenário de ônus de até R$200 mil mensais para a obtenção de bônus no mesmo patamar, representando um <strong style="color:var(--text)">impacto financeiro positivo de aproximadamente R$400 mil/mês</strong> na virada de resultado.</p>
+
+      <div class="case-skills">
+        <span class="eyebrow" style="display:block; margin-bottom:14px;">Competências demonstradas</span>
+        <div class="skills-row">
+          <span class="tag">Liderança de equipe</span>
+          <span class="tag">Integração de dados multifonte</span>
+          <span class="tag">Automação com VBA</span>
+          <span class="tag">Análise de indicadores</span>
+          <span class="tag">Gestão orientada a resultados</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CASE STUDY 02 -->
+<section id="case2" style="padding:0;">
+  <div class="case-hero">
+    <div class="container-narrow reveal">
+      <span class="case-tag">Caso 02 · Pipeline End-to-End</span>
+      <h2 class="display gradient-text">Do email ao dashboard,<br>sem fricção.</h2>
+      <p class="subtitle"><span style="color:var(--green)">+20%</span> em um indicador crucial.<br>Novas frentes de análise destravadas.</p>
+    </div>
+  </div>
+
+  <!-- Impact numbers -->
+  <div class="container reveal">
+    <div class="impact-grid">
+      <div class="impact-cell">
+        <div class="num green">+20%</div>
+        <div class="lbl">Ganho no indicador crítico do negócio</div>
+      </div>
+      <div class="impact-cell">
+        <div class="num gradient">4</div>
+        <div class="lbl">Etapas integradas: Email → SharePoint → SQL → Power BI</div>
+      </div>
+      <div class="impact-cell">
+        <div class="num gradient">∞</div>
+        <div class="lbl">Novas frentes de análise corporativa viabilizadas</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pipeline architecture -->
+  <div class="container reveal">
+    <div class="pipeline">
+      <div class="pipe-step">
+        <div class="step-icon">📧</div>
+        <div class="step-num">ETAPA 01</div>
+        <h4>Captura no Email</h4>
+        <p>Anexos das bases extraídos automaticamente da caixa de entrada.</p>
+      </div>
+      <div class="pipe-step">
+        <div class="step-icon">📁</div>
+        <div class="step-num">ETAPA 02</div>
+        <h4>SharePoint</h4>
+        <p>Base original arquivada e versionada com governança.</p>
+      </div>
+      <div class="pipe-step">
+        <div class="step-icon">🗄️</div>
+        <div class="step-num">ETAPA 03</div>
+        <h4>SQL Server</h4>
+        <p>Upload, limpeza, padronização e modelagem dos dados.</p>
+      </div>
+      <div class="pipe-step">
+        <div class="step-icon">📊</div>
+        <div class="step-num">ETAPA 04</div>
+        <h4>Power BI</h4>
+        <p>Dashboard estratégico conectado ao modelo tratado.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Story blocks -->
+  <div class="container-narrow">
+
+    <div class="case-block reveal">
+      <span class="eyebrow">01 · Contexto</span>
+      <h3 class="h2 gradient-text">Bases críticas presas em uma caixa de entrada.</h3>
+      <p>Informações estratégicas chegavam todos os dias por email — anexos enviados manualmente, sem padronização, sem versionamento e sem qualquer integração com o ambiente corporativo de dados.</p>
+      <p>O resultado era previsível: retrabalho constante, risco de perda de bases, baixa rastreabilidade e nenhuma visibilidade analítica unificada para apoiar a tomada de decisão.</p>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="eyebrow">02 · A solução</span>
+      <h3 class="h2 gradient-text">Um pipeline único, do email ao painel.</h3>
+      <p>Desenhei e construí um fluxo end-to-end que automatiza desde a captura do anexo no email até a entrega do insight no dashboard — eliminando processos manuais e elevando os dados ao padrão corporativo.</p>
+      <p>Cada etapa foi pensada para garantir três princípios: <strong style="color:var(--text)">governança</strong> (originais preservadas no SharePoint), <strong style="color:var(--text)">qualidade</strong> (tratativa centralizada no SQL) e <strong style="color:var(--text)">visibilidade</strong> (Power BI conectado a um modelo confiável).</p>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="eyebrow">03 · Arquitetura em quatro etapas</span>
+      <h3 class="h2 gradient-text">Cada camada com seu papel.</h3>
+      <p><strong style="color:var(--text)">01 · Email →</strong> Captura automatizada dos anexos recebidos, eliminando a operação manual.</p>
+      <p><strong style="color:var(--text)">02 · SharePoint →</strong> Armazenamento da base original com versionamento, garantindo rastreabilidade e auditoria.</p>
+      <p><strong style="color:var(--text)">03 · SQL Server →</strong> Upload, limpeza, padronização e modelagem para alimentar o ambiente analítico.</p>
+      <p><strong style="color:var(--text)">04 · Power BI →</strong> Dashboard conectado ao modelo tratado, com KPIs estratégicos e análises drill-down.</p>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="eyebrow">04 · Resultado</span>
+      <h3 class="h2 gradient-text">+20% no indicador. E muito além dele.</h3>
+      <p>O dashboard entregue gerou um <strong style="color:var(--text)">ganho de 20% em um indicador crucial para o negócio</strong>, ao oferecer aos gestores uma visão em tempo hábil para correção de rota.</p>
+      <p>O efeito secundário foi tão valioso quanto o primário: ao consolidar os dados no ambiente corporativo, foram <strong style="color:var(--text)">destravadas novas frentes de análise</strong>, permitindo que outras áreas extraíssem valor adicional dos mesmos dados antes presos em planilhas.</p>
+
+      <div class="case-skills">
+        <span class="eyebrow" style="display:block; margin-bottom:14px;">Competências demonstradas</span>
+        <div class="skills-row">
+          <span class="tag">Pipeline End-to-End</span>
+          <span class="tag">Power Automate</span>
+          <span class="tag">SharePoint · Governança</span>
+          <span class="tag">SQL Server · ETL</span>
+          <span class="tag">Modelagem de dados</span>
+          <span class="tag">Power BI · DAX</span>
+          <span class="tag">Visão corporativa de dados</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CASE STUDY 03 -->
+<section id="case3" style="padding:0;">
+  <div class="case-hero">
+    <div class="container-narrow reveal">
+      <span class="case-tag">Caso 03 · Power Apps + BI Financeiro</span>
+      <h2 class="display gradient-text">Do app à provisão<br>financeira, ao vivo.</h2>
+      <p class="subtitle">Reajuste contratual atualizado <span style="color:var(--green)">durante a reunião</span>.<br>Impacto financeiro recalculado em tempo real.</p>
+    </div>
+  </div>
+
+  <!-- Impact numbers -->
+  <div class="container reveal">
+    <div class="impact-grid">
+      <div class="impact-cell">
+        <div class="num gradient">3</div>
+        <div class="lbl">Plataformas integradas: Power Apps · Power Automate · Power BI</div>
+      </div>
+      <div class="impact-cell">
+        <div class="num gradient">1</div>
+        <div class="lbl">Fonte única de verdade — SharePoint List sincronizada</div>
+      </div>
+      <div class="impact-cell">
+        <div class="num green">R$ 2,4M+</div>
+        <div class="lbl">Em provisão financeira monitorada por etapa</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pipeline architecture -->
+  <div class="container reveal">
+    <div class="pipeline">
+      <div class="pipe-step">
+        <div class="step-icon">📋</div>
+        <div class="step-num">FONTE DE DADOS</div>
+        <h4>SharePoint List</h4>
+        <p>Tabela centralizada com clientes, status e datas de acompanhamento.</p>
+      </div>
+      <div class="pipe-step">
+        <div class="step-icon">💻</div>
+        <div class="step-num">INTERFACE WEB</div>
+        <h4>Power Apps</h4>
+        <p>Canvas App acessado pelo navegador, compartilhado via Teams nas reuniões.</p>
+      </div>
+      <div class="pipe-step">
+        <div class="step-icon">🔔</div>
+        <div class="step-num">AUTOMAÇÃO</div>
+        <h4>Power Automate</h4>
+        <p>Notificação semanal aos diretores com link direto e contagem de pendentes.</p>
+      </div>
+      <div class="pipe-step">
+        <div class="step-icon">📊</div>
+        <div class="step-num">BI FINANCEIRO</div>
+        <h4>Power BI</h4>
+        <p>Dashboard cruzando o status com o banco financeiro — provisão por etapa.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Story blocks -->
+  <div class="container-narrow">
+
+    <div class="case-block reveal">
+      <span class="eyebrow">01 · Contexto</span>
+      <h3 class="h2 gradient-text">Reajustes sem visibilidade unificada.</h3>
+      <p>Os diretores acompanhavam reajustes contratuais por planilhas dispersas — atualizadas em momentos diferentes, sem padronização e sem qualquer integração com o ambiente financeiro.</p>
+      <p>Como consequência, o financeiro não tinha previsibilidade real de quando cada reajuste viraria receita, e os reportes executivos sempre chegavam com defasagem.</p>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="eyebrow">02 · Solução</span>
+      <h3 class="h2 gradient-text">Um ecossistema low-code, ponta a ponta.</h3>
+      <p>Desenhei um ecossistema integrado dentro do M365: <strong style="color:var(--text)">Power Apps</strong> como interface web, <strong style="color:var(--text)">SharePoint List</strong> como fonte de verdade, <strong style="color:var(--text)">Power Automate</strong> para notificações semanais e <strong style="color:var(--text)">Power BI</strong> cruzando os dados com o banco financeiro.</p>
+      <p>Quatro componentes operando como um único produto — sem custos adicionais de infraestrutura, com autenticação corporativa nativa.</p>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="eyebrow">03 · Diferencial</span>
+      <h3 class="h2 gradient-text">Atualização durante a reunião. Não depois.</h3>
+      <p>O app foi pensado para ser usado <strong style="color:var(--text)">durante</strong> a reunião de negociação. O diretor abre o app no navegador, compartilha a tela via Teams, seleciona o cliente e atualiza o status — e o painel financeiro recalcula a provisão em minutos. Todos veem o impacto em tempo real.</p>
+      <p>Toda segunda às 9h, um Power Automate dispara um e-mail personalizado para cada diretor com a contagem de pendentes daquela semana — eliminando o "esqueci de atualizar".</p>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="eyebrow">04 · Resultado</span>
+      <h3 class="h2 gradient-text">Provisão financeira sempre visível.</h3>
+      <p>Pela primeira vez, o financeiro consegue ver <strong style="color:var(--text)">quanto valor está parado em cada etapa</strong> do funil de reajuste — em negociação, aguardando aprovação, carta enviada, em cobrança. O valor preso por mais de 30 dias vira um KPI no topo do dashboard.</p>
+      <p>Mais importante: <strong style="color:var(--text)">cada atualização do diretor recalcula o impacto financeiro automaticamente</strong>, transformando o acompanhamento de status em um instrumento real de previsibilidade de receita.</p>
+
+      <div style="margin-top:32px;">
+        <a href="mockup-powerapp-reajuste.html" target="_blank" class="btn-link" style="font-size:18px;">Ver protótipo completo →</a>
+      </div>
+
+      <div class="case-skills">
+        <span class="eyebrow" style="display:block; margin-bottom:14px;">Competências demonstradas</span>
+        <div class="skills-row">
+          <span class="tag">Power Apps · Canvas</span>
+          <span class="tag">Power Automate</span>
+          <span class="tag">Power BI · DAX</span>
+          <span class="tag">SharePoint List</span>
+          <span class="tag">Modelagem multifonte</span>
+          <span class="tag">Star Schema</span>
+          <span class="tag">Arquitetura M365</span>
+          <span class="tag">UX para tomada de decisão</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experiencia">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Trajetória</span>
+      <h2 class="h1 gradient-text">Construído ao longo<br>de uma década.</h2>
+    </div>
+
+    <div class="exp-list reveal">
+      <div class="exp-item">
+        <div class="exp-period">JAN 2025 — ATUAL</div>
+        <div class="exp-content">
+          <h3>Analista de BI Sênior</h3>
+          <div class="company">Neobpo · Aracaju</div>
+          <ul>
+            <li>Desenvolvimento de dashboards estratégicos com Power BI</li>
+            <li>Levantamento de requisitos com clientes e operações</li>
+            <li>ETL com SQL Server e Python</li>
+            <li>Criação de RPA com Python e Power Automate</li>
+            <li>Otimização de performance de queries e medidas DAX</li>
+            <li>Uso de SSIS, Pipelines, Azure Databricks, Star Schema e Data Warehouse</li>
+            <li>Metodologias ágeis (Kanban); SharePoint, Figma e DBeaver</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">JUN 2023 — JAN 2025</div>
+        <div class="exp-content">
+          <h3>Analista de MIS Pleno</h3>
+          <div class="company">Neobpo · Aracaju</div>
+          <ul>
+            <li>Dashboards gerenciais em Power BI</li>
+            <li>ETL com SQL Server e Python</li>
+            <li>Criação de automações (RPA)</li>
+            <li>Modelagem e transformação de dados com Pandas, Power Query M e Star Schema</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">JUL 2014 — SET 2022</div>
+        <div class="exp-content">
+          <h3>Supervisor de Operações</h3>
+          <div class="company">AlmavivA do Brasil · Aracaju</div>
+          <ul>
+            <li>ETL e análise avançada de dados</li>
+            <li>Relatórios gerenciais e suporte à tomada de decisão</li>
+            <li>Automação de processos com VBA e ferramentas diversas</li>
+            <li>Liderança da equipe responsável pela reversão de penalidades contratuais (ver caso em destaque)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contato" class="contact">
+  <div class="container-narrow reveal">
+    <h2 class="display gradient-text">Vamos<br><span class="accent-text">conversar?</span></h2>
+    <p class="lede">Aberto a oportunidades em BI, análise de dados, automação e liderança técnica.</p>
+    <div class="contact-info">
+      <a href="mailto:vlreisdata@outlook.com" class="contact-pill">✉ vlreisdata@outlook.com</a>
+      <a href="tel:+5579991090465" class="contact-pill">📱 (79) 99109-0465</a>
+      <a href="cv-valerio-reis.pdf" download class="contact-pill">⬇ Baixar CV</a>
+      <a href="#" class="contact-pill">📍 Aracaju, SE</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 Valério Luiz Dantas Reis · Construído com cuidado pelos detalhes.</div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold:0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
