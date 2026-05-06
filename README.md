@@ -8,7 +8,7 @@ Portfólio profissional de **Valério Reis**, Analista de BI Sênior — Power B
 
 Mais de 10 anos transformando dados em decisões. O portfólio destaca três casos de impacto:
 
-1. **Reversão de Penalidades Contratuais** — De −R$200k/mês a +R$200k/mês (giro de R$400k mensais)
+1. **Reversão de Penalidades Contratuais** — De −R$200mil/mês a +R$200mil/mês (giro de R$400k mensais)
 2. **Pipeline End-to-End: Email → SharePoint → SQL → Power BI** — +20% em indicador crucial
 3. **Power Apps + BI Financeiro** — Acompanhamento de reajuste contratual ao vivo durante reuniões
 
